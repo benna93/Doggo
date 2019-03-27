@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" type="text/css" href="style.css">
+
+  <title></title>
+
+</head>
+
+<body =onload="Doge">
+
+  <button id=doge type="button">Doggo</button>
+  <img src="https://static.thenounproject.com/png/99472-200.png">
+
+<script>
+
+
+  var dogeButton = document.getElementById('adddoge');
+   dogeButton.addEventListener('click', addImageToBody);
+
+
+   // On click
+   function addImageToBody () {
+       var theImage = document.getElementById('stupidDog');
+
+       // 1. theImage = empty
+       // When? if we clicked for the first time
+
+
+       // 2. theImage = <img>
+       // When? when we click it for the second time
+
+       if (theImage)  {
+           console.log("Clicked it a second time");
+           console.log("hello");
+           document.body.style.backgroundColor = "blue";
+           document.body.removeChild(theImage);
+       } else {
+           var image = document.createElement('img');
+           image.src = "https://static.thenounproject.com/png/99472-200.png";
+           image.id = "stupidDog";
+
+           document.body.appendChild(image);
+       }
+   }
+
+   // Removes the image with id stupidDog from the document
+   function removeTheImage () {
+       console.log("We have clicked the remove button");
+
+       var image = document.getElementById('stupidDog');
+       image.parentNode.removeChild(image);
+   }
+   </script>
+
+</body>
+
+</html>
