@@ -9,51 +9,51 @@
 
 </head>
 
-<body =onload="Doge">
+<body onload="changeToWoof()">
 
-  <button id=doge type="button">Doggo</button>
-  <img src="https://static.thenounproject.com/png/99472-200.png">
-
-<script>
+  <button id=doge type="button" onmouseover="changeButtonToImg()"> Doggo<img src="https://static.thenounproject.com/png/99472-200.png"> </button>
 
 
-  var dogeButton = document.getElementById('adddoge');
-   dogeButton.addEventListener('click', addImageToBody);
 
+  <script>
+    window.addEventListener("load", function() {
+      document.getElementById("doge").innerHTML = "Woof";
+    });
 
-   // On click
-   function addImageToBody () {
-       var theImage = document.getElementById('stupidDog');
+    var doge = document.getElementById("doge");
+    var image = document.createElement("img");
+    var breadDoggo = document.createElement("img");
 
-       // 1. theImage = empty fgdfg
-       // When? if we clicked for the first time
+    doge.addEventListener("mouseenter", enterButton);
+    doge.addEventListener("mouseleave", leaveButton);
+    document.body.addEventListener("click", addDogeImage);
 
+    function enterButton() {
+      if (document.getElementById("dogIcon")) {
+        return;
+      }
+      doge.innerHTML = "";
+      image.src = "https://static.thenounproject.com/png/99472-200.png";
+      image.id = "dogIcon";
+      doge.appendChild(image);
+    }
 
-       // 2. theImage = <img>
-       // When? when we click it for the second time
+    function leaveButton() {
+      doge.removeChild(image);
+      doge.innerHTML = 'Woof';
+    }
 
-       if (theImage)  {
-           console.log("Clicked it a second time");
-           console.log("hello");
-           document.body.style.backgroundColor = "blue";
-           document.body.removeChild(theImage);
-       } else {
-           var image = document.createElement('img');
-           image.src = "https://static.thenounproject.com/png/99472-200.png";
-           image.id = "stupidDog";
-
-           document.body.appendChild(image);
-       }
-   }
-
-   // Removes the image with id stupidDog from the document
-   function removeTheImage () {
-       console.log("We have clicked the remove button");
-
-       var image = document.getElementById('stupidDog');
-       image.parentNode.removeChild(image);
-   }
-   </script>
+    function addDogeImage() {
+      if (document.getElementById("bread")) {
+        var element = document.getElementById("bread");
+        element.parentNode.removeChild(element);
+        return;
+      }
+      breadDoggo.src = "Doggo.png";
+      breadDoggo.id = "bread";
+      document.body.appendChild(breadDoggo);
+    }
+  </script>
 
 </body>
 
