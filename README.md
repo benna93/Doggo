@@ -1,4 +1,4 @@
-# Doggo
+<center># Doggo</center>
 <h1> This is my first Javascript exercise.</h1>
 <br>
 <p> This was an hard exercise, because again it was the first time.<p>
